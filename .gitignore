@@ -1,0 +1,14 @@
+docs
+dist
+node_modules
+*.log
+*.tmp
+.DS_Store
+.idea
+.vscode
+*.env
+*.bak
+*.swp
+*.swo
+coverage
+*.tsbuildinfo
