@@ -61,7 +61,7 @@ export function useTableSelection<Row extends TableRow>({
   );
 
   const togglePageSelection = useCallback(async () => {
-    if (isPageAllSelected || isAllRowsSelected) {
+    if (isPageAllSelected || isAllRowsSelected || isPagePartiallySelected) {
       setSelectedRowIds(new Set());
       setIsAllRowsSelected(false);
     } else {
@@ -72,7 +72,12 @@ export function useTableSelection<Row extends TableRow>({
         return next;
       });
     }
-  }, [isPageAllSelected, isAllRowsSelected, loadCurrentPageRows]);
+  }, [
+    isPageAllSelected,
+    isAllRowsSelected,
+    isPagePartiallySelected,
+    loadCurrentPageRows,
+  ]);
 
   const selectAllRows = useCallback(() => {
     setIsAllRowsSelected(true);
